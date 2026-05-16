@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # DynamoDB Local — mirrors AWS DynamoDB for local development
+  dynamodb-local:
+    image: amazon/dynamodb-local:latest
+    container_name: cic-dynamodb
+    ports:
+      - '8000:8000'
+    command: '-jar DynamoDBLocal.jar -sharedDb -inMemory'
+    healthcheck:
+      test: ['CMD-SHELL', 'curl -s http://localhost:8000 || exit 1']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ElasticMQ — SQS-compatible local queue
+  elasticmq:
+    image: softwaremill/elasticmq-native:latest
+    container_name: cic-queue
+    ports:
+      - '9324:9324'   # SQS API
+      - '9325:9325'   # ElasticMQ UI
+    volumes:
+      - ./infra/elasticmq.conf:/opt/elasticmq.conf
+    healthcheck:
+      test: ['CMD-SHELL', 'curl -s http://localhost:9325 || exit 1']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  default:
+    name: cic-network
