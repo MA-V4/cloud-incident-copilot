@@ -148,5 +148,3 @@ All work happens on feature branches. No direct pushes to `main`. Every PR is re
 - **AI fallback** - mock AI reports always work; Ollama is optional
 
 ---
-
-*Build the smallest working version first, then make it impressive through reliability, documentation, deployment, and a strong demo.*
