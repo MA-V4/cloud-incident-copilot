@@ -1,6 +1,6 @@
 # Cloud Incident Copilot
 
-> AI-powered incident response platform — zero cost, event-driven, portfolio-quality.
+> AI-powered incident response platform - zero cost, event-driven, portfolio-quality.
 
 A two-person CS collaboration project that ingests application logs and deployment events, detects incidents automatically, and generates AI-assisted root-cause reports through a web dashboard.
 
@@ -51,7 +51,7 @@ AI Incident Report (Mock or Local Ollama)
 ### Prerequisites
 
 - Node.js 20+
-- pnpm 9+ — install with `npm install -g pnpm`
+- pnpm 9+ - install with `npm install -g pnpm`
 - Docker Desktop
 
 ### Steps
@@ -90,12 +90,12 @@ pnpm dev:frontend
 ```
 cloud-incident-copilot/
 ├── apps/
-│   ├── backend/          # Fastify API — Student A
+│   ├── backend/          # Fastify API - Student A
 │   │   └── src/
 │   │       ├── routes/   # HTTP endpoints
 │   │       ├── middleware/  # Auth, validation hooks
 │   │       └── lib/      # Queue + DynamoDB clients
-│   └── frontend/         # Next.js dashboard — Student B
+│   └── frontend/         # Next.js dashboard - Student B
 │       └── src/
 │           ├── app/      # Next.js App Router pages
 │           ├── components/  # Shared UI components
@@ -103,7 +103,7 @@ cloud-incident-copilot/
 ├── packages/
 │   └── types/            # Shared TypeScript types (both)
 ├── infra/
-│   ├── lambda/           # SQS worker — Student A
+│   ├── lambda/           # SQS worker - Student A
 │   └── elasticmq.conf    # Local queue config
 ├── docs/                 # Architecture docs, API contracts
 ├── docker-compose.yml
@@ -142,10 +142,10 @@ All work happens on feature branches. No direct pushes to `main`. Every PR is re
 
 ## Constraints
 
-- **Zero cost** — no paid services, no paid APIs
-- **Local-first** — full system runs locally via Docker Compose
-- **Free deployment only** — Vercel Hobby, Render Free, AWS Free Tier
-- **AI fallback** — mock AI reports always work; Ollama is optional
+- **Zero cost** - no paid services, no paid APIs
+- **Local-first** - full system runs locally via Docker Compose
+- **Free deployment only** - Vercel Hobby, Render Free, AWS Free Tier
+- **AI fallback** - mock AI reports always work; Ollama is optional
 
 ---
 
