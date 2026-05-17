@@ -146,5 +146,6 @@ All work happens on feature branches. No direct pushes to `main`. Every PR is re
 - **Local-first** - full system runs locally via Docker Compose
 - **Free deployment only** - Vercel Hobby, Render Free, AWS Free Tier
 - **AI fallback** - mock AI reports always work; Ollama is optional
+- **AI USAGE** - AI can only be used for Research and Debugging.
 
 ---
